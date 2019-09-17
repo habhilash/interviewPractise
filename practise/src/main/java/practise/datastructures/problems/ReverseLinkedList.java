@@ -1,6 +1,6 @@
 package practise.datastructures.problems;
 
-class MyLinkedList {
+class ReverseLinkedList {
 
     static Node head;
 
@@ -14,7 +14,7 @@ class MyLinkedList {
         }
     }
 
-    public static void printLinkedList(MyLinkedList linkedList) {
+    public static void printLinkedList(ReverseLinkedList linkedList) {
         Node h = linkedList.head;
         while (linkedList.head != null) {
             System.out.println(linkedList.head.data + " ");
@@ -24,7 +24,8 @@ class MyLinkedList {
         linkedList.head = h;
     }
 
-    public static void reverseLinkedList(MyLinkedList linkedList) {
+    // Reverse Linked List using Iterative Approach
+    public static void reverseLinkedList(ReverseLinkedList linkedList) {
         Node prev = null;
         Node next = null;
         Node curr = linkedList.head;
@@ -38,14 +39,34 @@ class MyLinkedList {
         linkedList.head = prev;
     }
 
-    public static void main(String[] args) {
-            MyLinkedList myLinkedList = new MyLinkedList();
-            myLinkedList.head = new Node(1);
-            myLinkedList.head.next = new Node(2);
-            myLinkedList.head.next.next = new Node(3);
 
-            printLinkedList(myLinkedList);
-            reverseLinkedList(myLinkedList);
-            printLinkedList(myLinkedList);
+    // Reverse Linked List using recursion
+    public static Node reverseLinkedListRecursivedly(Node head) {
+        Node first;
+
+        if(head == null || head.next == null) {
+            return head;
+        }
+
+        first = reverseLinkedListRecursivedly(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return first;
+
+    }
+
+    public static void main(String[] args) {
+            ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
+            reverseLinkedList.head = new Node(1);
+            reverseLinkedList.head.next = new Node(2);
+            reverseLinkedList.head.next.next = new Node(3);
+
+            printLinkedList(reverseLinkedList);
+            reverseLinkedList(reverseLinkedList);
+            printLinkedList(reverseLinkedList);
+
+            reverseLinkedList.head = reverseLinkedListRecursivedly(reverseLinkedList.head);
+            printLinkedList(reverseLinkedList);
     }
 }
