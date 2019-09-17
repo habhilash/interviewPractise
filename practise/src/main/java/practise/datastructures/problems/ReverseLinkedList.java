@@ -56,11 +56,44 @@ class ReverseLinkedList {
 
     }
 
+    // Print middle of the linked list using slow pointer and fast pointer
+    public static void printMiddleElementOfLinkedList(Node head) {
+        Node slow_ptr = head;
+        Node fast_ptr = head;
+
+        if (head != null) {
+            while(fast_ptr != null && fast_ptr.next != null) {
+                fast_ptr = fast_ptr.next.next;
+                slow_ptr = slow_ptr.next;
+            }
+            System.out.println("Middle element of Linked List is : " + slow_ptr.data + "\n");
+        }
+
+    }
+
+    public static void printMiddleUsingOddCount(Node head) {
+        int count = 0;
+        Node mid = head;
+
+        while (head != null) {
+            if (count % 2 == 1)
+                mid = mid.next;
+
+            ++count;
+            head = head.next;
+        }
+
+        if (mid != null) {
+            System.out.println("Middle elment is : " + mid.data);
+        }
+    }
+
     public static void main(String[] args) {
             ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
             reverseLinkedList.head = new Node(1);
             reverseLinkedList.head.next = new Node(2);
             reverseLinkedList.head.next.next = new Node(3);
+            reverseLinkedList.head.next.next.next = new Node(4);
 
             printLinkedList(reverseLinkedList);
             reverseLinkedList(reverseLinkedList);
@@ -68,5 +101,8 @@ class ReverseLinkedList {
 
             reverseLinkedList.head = reverseLinkedListRecursivedly(reverseLinkedList.head);
             printLinkedList(reverseLinkedList);
+
+            printMiddleElementOfLinkedList(reverseLinkedList.head);
+            printMiddleUsingOddCount(reverseLinkedList.head);
     }
 }
