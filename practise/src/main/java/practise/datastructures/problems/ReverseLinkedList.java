@@ -1,5 +1,8 @@
 package practise.datastructures.problems;
 
+import java.util.HashMap;
+import java.util.Map;
+
 class ReverseLinkedList {
 
     static Node head;
@@ -68,7 +71,6 @@ class ReverseLinkedList {
             }
             System.out.println("Middle element of Linked List is : " + slow_ptr.data + "\n");
         }
-
     }
 
     public static void printMiddleUsingOddCount(Node head) {
@@ -104,5 +106,16 @@ class ReverseLinkedList {
 
             printMiddleElementOfLinkedList(reverseLinkedList.head);
             printMiddleUsingOddCount(reverseLinkedList.head);
+
+        HashMap<Integer, String > hm = new HashMap<>();
+        hm.put(1, "a");
+        hm.put(null, "b");
+        hm.put(2, "c");
+
+        for(Map.Entry m : hm.entrySet()) {
+            m.getKey();
+            m.getValue();
+        }
+
     }
 }
