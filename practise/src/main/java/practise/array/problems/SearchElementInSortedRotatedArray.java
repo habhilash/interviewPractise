@@ -31,7 +31,7 @@ public class SearchElementInSortedRotatedArray {
             return search(a, mid+1, h, key);
         }
 
-        return search(a, mid+1, h, key);
+        return search(a, l, mid-1, key);
     }
 
     public static void main(String[] args) {
