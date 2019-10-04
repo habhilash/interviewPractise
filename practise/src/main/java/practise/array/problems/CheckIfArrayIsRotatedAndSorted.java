@@ -6,7 +6,6 @@ public class CheckIfArrayIsRotatedAndSorted {
                                    int n)
     {
         int minEle = Integer.MAX_VALUE;
-        int maxEle = Integer.MIN_VALUE;
 
         int minIndex = -1;
 
