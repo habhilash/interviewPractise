@@ -28,6 +28,7 @@ public class QuickSort {
        smaller (smaller than pivot) to left of
        pivot and all greater elements to right
        of pivot */
+    
     private static int partition(int[] a, int low, int high) {
         int pivot_item = a[high];
         int i = low-1; //Index of smaller element
