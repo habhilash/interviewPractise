@@ -26,7 +26,10 @@ public class CountRotationsSortedArray {
     }
 
     public static void main(String[] args) {
-        int[] a = {3,4,5,6,1,2};
-        System.out.println("No. of rotations in the given sorted array : " + countRotations(a, 0, a.length-1));
+        int[] a = {3,4,5,6,7,1,2};
+        int no_of_rotations = countRotations(a, 0, a.length-1);
+        System.out.println("No. of rotations in the given sorted array : " + no_of_rotations);
+        // Prints minimum element in rotated sorted array.
+        System.out.println("Minimum element in the array : " + a[no_of_rotations]);
     }
 }
