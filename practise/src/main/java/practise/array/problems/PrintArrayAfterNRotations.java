@@ -16,9 +16,29 @@ public class PrintArrayAfterNRotations {
         }
     }
 
+    /* OR
+            // Function to leftRotate array multiple times
+void leftRotate(int arr[], int n, int k)
+{
+    static void leftRotate(int arr[], int n,
+                                     int k)
+    {
+        // To get the starting point of rotated array
+    int mod = k % n;
+
+    // Prints the rotated array from
+    // start position
+        for(int i = 0; i < n; ++i)
+            System.out.print(arr[(i + mod) % n]
+            + " ");
+
+        System.out.println();
+}
+     */
+
     public static void main(String[] args) {
-        int[] a = {1,2,3,4,5,6,7};
-        int k = 1;
+        int[] a = {1,3,5,7,9};
+        int k = 14;
         leftRotate(a, a.length, k);
     }
 }
