@@ -1,6 +1,7 @@
 package practise.array.problems;
 
-// This problem can be solved using negating of arr[arr[i]] elements as well. Refer to ReplaceDuplicatesInArray
+// This problem can be solved using negating of arr[arr[i]] elements as well.
+// Refer to ReplaceDuplicatesInArray
 // Array should contain only n-1 elements.
 public class FindDuplicateElementsInArray {
 
