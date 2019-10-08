@@ -41,6 +41,7 @@ public class RearrangePositivesNegatives {
             // Same as (l+r)/2, but avoids overflow for large l and h
             int m = l + (r-l) / 2;
 
+            // Sort first and second halves
             RearrangePosNeg(a, l, m);
             RearrangePosNeg(a, m+1, r);
 
